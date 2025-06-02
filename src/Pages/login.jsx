@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { apiConnector } from '../ApiConnector/Axios';
 import { useAuth } from '../Context/AuthContext';
+import { LOGIN } from '../ApiConnector/apis';
 
 const LoginPage = () => {
   const [formData, setFormData] = useState({ email: '', password: '' });
@@ -17,7 +18,7 @@ const LoginPage = () => {
     e.preventDefault();
     setError('');
     try {
-      const res = await apiConnector('POST','http://localhost:4000/api/v1/auth/login', formData);
+      const res = await apiConnector('POST', LOGIN , formData);
       if (res.status !== 200) {
         throw new Error('Login failed');
       }

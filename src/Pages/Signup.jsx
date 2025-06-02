@@ -2,6 +2,7 @@ import React, { useState } from 'react';
  // or use 'axios' with full URL
 import { Link, useNavigate } from 'react-router-dom';
 import { apiConnector } from '../ApiConnector/Axios';
+import { SIGNUP } from '../ApiConnector/apis';
 
 const SignupPage = () => {
   const [formData, setFormData] = useState({
@@ -27,7 +28,7 @@ const SignupPage = () => {
     }
 
     try {
-      const res =await apiConnector('POST','http://localhost:4000/api/v1/auth/register', formData);
+      const res =await apiConnector('POST',SIGNUP, formData);
       console.log(res);
       if (res.status !== 200) {
         throw new Error('Signup failed');
