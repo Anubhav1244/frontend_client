@@ -122,18 +122,18 @@ const reverseGeocode = async (lat, lng) => {
           className="select select-bordered bg-white/10 text-white"
           onChange={(e) => setFilters((f) => ({ ...f, status: e.target.value }))}
         >
-          <option value="">All Status</option>
-          <option value="active">Active</option>
-          <option value="inactive">Inactive</option>
+          <option value="" className="text-black">All Status</option>
+          <option value="active" className="text-black">Active</option>
+          <option value="inactive" className="text-black">Inactive</option>
         </select>
         <select
           className="select select-bordered bg-white/10 text-white"
           onChange={(e) => setFilters((f) => ({ ...f, connector: e.target.value }))}
         >
-          <option value="">All Connectors</option>
-          <option value="Type 2">Type 2</option>
-          <option value="CCS">CCS</option>
-          <option value="CHAdeMO">CHAdeMO</option>
+          <option value="" className="text-black">All Connectors</option>
+          <option value="Type 2" className="text-black">Type 2</option>
+          <option value="CCS" className="text-black">CCS</option>
+          <option value="CHAdeMO" className="text-black">CHAdeMO</option>
         </select>
       </div>
 
